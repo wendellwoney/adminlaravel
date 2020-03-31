@@ -5,5 +5,5 @@ namespace App;
 
 class Config
 {
-    const SITE_NAME = "SofRif";
+    const SITE_NAME = "ADMIN";
 }
