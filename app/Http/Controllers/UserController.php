@@ -42,7 +42,7 @@ class UserController extends Controller
 
     public function edit()
     {
-        return view('cidades.form');
+        return view('user.form');
     }
 
     public function update(Request $request, $id)
@@ -50,7 +50,7 @@ class UserController extends Controller
         $User = User::findOrFail($id);
         $User->name        = $request->name;
         $User->email       = $request->inputemail;
-        if($request->inputemail) {
+        if($request->inputsenha) {
             $User->	password = bcrypt($request->inputsenha);
         }
         $User->save();

@@ -16,5 +16,6 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('root');
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('user', 'UserController');
+Route::get('/perfil', 'PerfilController@index')->name('perfil.index');
+Route::match(['put', 'patch'],'/perfil/{user}', 'PerfilController@update')->name('perfil.update');
