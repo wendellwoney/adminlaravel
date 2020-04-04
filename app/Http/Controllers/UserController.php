@@ -9,8 +9,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $Users = User::orderBy('created_at', 'desc');
-        return view('user.index')->with(compact('Users'));
+        $users = User::orderBy('name', 'asc')->get();
+        return view('user.index')->with(compact('users'));
     }
 
     public function create()
@@ -22,11 +22,12 @@ class UserController extends Controller
     {
         $User = new User;
         $User->name        = $request->name;
-        $User->description = $request->description;
-        $User->quantity    = $request->quantity;
-        $User->price       = $request->price;
+        $User->email       = $request->inputemail;
+        if($request->inputemail) {
+            $User->	password = bcrypt($request->inputsenha);
+        }
         $User->save();
-        return redirect()->route('user.index')->with('message', 'Usuário criado com sucesso!');
+        return redirect()->route('user.index')->with('success', 'Usuário criado com sucesso!');
     }
 
     public function show($id)
@@ -39,27 +40,27 @@ class UserController extends Controller
         return view('user.edit')->with(compact('usuario'));
     }
 
-    public function edit($id)
+    public function edit()
     {
-        $User = User::findOrFail($id);
-        return view('user.edit',compact('User'));
+        return view('cidades.form');
     }
 
     public function update(Request $request, $id)
     {
         $User = User::findOrFail($id);
         $User->name        = $request->name;
-        $User->description = $request->description;
-        $User->quantity    = $request->quantity;
-        $User->price       = $request->price;
+        $User->email       = $request->inputemail;
+        if($request->inputemail) {
+            $User->	password = bcrypt($request->inputsenha);
+        }
         $User->save();
-        return redirect()->route('user.index')->with('message', 'Usuário atualizado com sucesso!');
+        return redirect()->route('user.index')->with('success', 'Usuário atualizado com sucesso!');
     }
 
     public function destroy($id)
     {
         $User = User::findOrFail($id);
         $User->delete();
-        return redirect()->route('user.index')->with('alert-success','Usuário removido!');
+        return redirect()->route('user.index')->with('success','Usuário removido!');
     }
 }

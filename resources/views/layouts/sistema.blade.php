@@ -12,6 +12,15 @@
           crossorigin="anonymous"/>
     <script src="{{ asset('js/all.min.js') }}"
             crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/Chart.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/demo/datatables-demo.js') }}"></script>
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -73,14 +82,5 @@
         </footer>
     </div>
 </div>
-<script src="{{ asset('js/jquery-3.4.1.min.js') }}" crossorigin="anonymous"></script>
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
-<script src="{{ asset('js/scripts.js') }}"></script>
-<script src="{{ asset('js/Chart.min.js') }}" crossorigin="anonymous"></script>
-<script src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
-<script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script>
-<script src="{{ asset('js/jquery.dataTables.min.js') }}" crossorigin="anonymous"></script>
-<script src="{{ asset('js/dataTables.bootstrap4.min.js') }}" crossorigin="anonymous"></script>
-<script src="{{ asset('assets/demo/datatables-demo.js') }}"></script>
 </body>
 </html>
