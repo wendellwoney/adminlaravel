@@ -31,7 +31,12 @@ class UserController extends Controller
 
     public function show($id)
     {
-        //
+        $usuario = User::find($id);
+        if (!$usuario) {
+            return redirect()->route('user.index')->withErrors(['Usuário não encontrado!']);
+        }
+
+        return view('user.edit')->with(compact('usuario'));
     }
 
     public function edit($id)

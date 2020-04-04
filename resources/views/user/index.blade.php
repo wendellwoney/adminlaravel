@@ -10,7 +10,7 @@
         </ol>
 
         <div class="card mb-4">
-            <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+            <div class="card-header"><i class="fas fa-table mr-1"></i>Usuários cadastrados no sistema</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
