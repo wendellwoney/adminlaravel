@@ -36,7 +36,7 @@
                aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="{{ route('perfil.index') }}">Meu Usuário</a>
-                <a class="dropdown-item" href="#">Activity Log</a>
+                <a class="dropdown-item" href="{{ route('log.index') }}">Log das Atividades</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item"
                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"
@@ -61,6 +61,10 @@
                     <a class="nav-link" href="{{ route('user.index') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                         Usuários
+                    </a>
+                    <a class="nav-link" href="{{ route('log.geral') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        Log das Atividades
                     </a>
                 </div>
             </div>
