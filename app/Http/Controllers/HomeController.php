@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Util\Log\AcoesLog;
+use App\Util\Log\src\Log;
+use App\Util\Log\TelasLog;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        Log::send(TelasLog::HOME, AcoesLog::ACESSO);
         return view('home.home');
     }
 }

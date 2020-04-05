@@ -6,6 +6,7 @@ namespace App\Util\Log;
 
 class TelasLog
 {
-    public const ACESSO = 'ACESSO';
+    public const HOME = 'HOME';
     public const USUARIO = 'USUARIO';
+    public const PERFIL = 'PERFIL';
 }

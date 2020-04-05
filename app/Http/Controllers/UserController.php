@@ -3,12 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Util\Log\AcoesLog;
+use App\Util\Log\src\Log;
+use App\Util\Log\TelasLog;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
+        Log::send(TelasLog::USUARIO, AcoesLog::ACESSO);
         $users = User::orderBy('name', 'asc')->get();
         return view('user.index')->with(compact('users'));
     }
@@ -27,6 +36,7 @@ class UserController extends Controller
             $User->	password = bcrypt($request->inputsenha);
         }
         $User->save();
+        Log::send(TelasLog::USUARIO, AcoesLog::CADASTRO, $User->id);
         return redirect()->route('user.index')->with('success', 'Usuário criado com sucesso!');
     }
 
@@ -54,13 +64,16 @@ class UserController extends Controller
             $User->	password = bcrypt($request->inputsenha);
         }
         $User->save();
+        Log::send(TelasLog::USUARIO, AcoesLog::EDICAO, $User->id);
         return redirect()->route('user.index')->with('success', 'Usuário atualizado com sucesso!');
     }
 
     public function destroy($id)
     {
         $User = User::findOrFail($id);
+        $id = $User->id;
         $User->delete();
+        Log::send(TelasLog::USUARIO, AcoesLog::REMOCAO, $id);
         return redirect()->route('user.index')->with('success','Usuário removido!');
     }
 }

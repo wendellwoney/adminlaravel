@@ -13,12 +13,13 @@ class CreateTableLog extends Migration
      */
     public function up()
     {
-        Schema::create('table_log', function (Blueprint $table) {
+        Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->string('tela');
             $table->string('acao');
             $table->integer('user_id');
             $table->dateTime('data');
+            $table->integer('id_item')->nullable(true);
             $table->timestamps();
             $table->softDeletes();
         });
