@@ -6,6 +6,7 @@ Executar os seguintes comandos
 - Criar base de dados de sua escolha (MYSQL)
 - composer install
 - composer dump-autoload
+- Atualizar .env com as definições de banco
 - php artisan migrate
 - php artisan db:seed
 
