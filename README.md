@@ -3,7 +3,7 @@
 
 Executar os seguintes comandos
 
-- Criar base de dados de sua escolha (MYSQL)
+- Criar base de dados para o projeto (MYSQL)
 - composer install
 - composer dump-autoload
 - Atualizar .env com as definições de banco
